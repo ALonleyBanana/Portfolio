@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "reset.css",
+	"sources": [
+		"../sass/reset.sass"
+	],
+	"sourcesContent": [
+		"html, body div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kdb, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {\n  margin: 0;\n  padding: 0;\n  font-size: 100%;\n  vertical-align: baseline;\n  border: 0;\n  outline: 0;\n  background: transparent; }\n\nol, ul {\n  list-style: none; }\n\nblockquote, q {\n  quotes: none; }\n\na, a:hover {\n  text-decoration: none; }\n\ntable {\n  border-collapse: collapse;\n  border-spacing: none; }\n"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,IAAI,EAAE,IAAI,CAAC,GAAG,EAAE,IAAI,EAAE,MAAM,EAAE,MAAM,EAAE,MAAM,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,CAAC,EAAE,UAAU,EAAE,GAAG,EAAE,CAAC,CAAC,IAAI,EAAE,OAAO,EAAE,OAAO,EAAE,GAAG,EAAE,IAAI,EAAE,IAAI,EAAE,GAAG,EAAE,GAAG,EAAE,EAAE,EAAE,IAAI,EAAE,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE,CAAC,EAAE,CAAC,EAAE,IAAI,EAAE,KAAK,EAAE,MAAM,EAAE,MAAM,EAAE,GAAG,EAAE,GAAG,EAAE,EAAE,EAAE,GAAG,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,EAAE,MAAM,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,CAAC,QAAQ,EAAE,IAAI,EAAE,KAAK,EAAE,MAAM,EAAE,KAAK,EAAE,OAAO,EAAE,KAAK,EAAE,KAAK,EAAE,KAAK,EAAE,EAAE,EAAE,EAAE,EAAE,EAAE,CAAC;EACnV,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,SAAS,EAAE,IAAI;EACf,cAAc,EAAE,QAAQ;EACxB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,WAAW;CAAG;;;AAE5B,AAAA,EAAE,EAAE,EAAE,CAAC;EACL,UAAU,EAAE,IAAI;CAAG;;;AAErB,AAAA,UAAU,EAAE,CAAC,CAAC;EACZ,MAAM,EAAE,IAAI;CAAG;;;AAEjB,AAAA,CAAC,EAAE,CAAC,AAAA,MAAM,CAAC;EACT,eAAe,EAAE,IAAI;CAAG;;;AAE1B,AAAA,KAAK,CAAC;EACJ,eAAe,EAAE,QAAQ;EACzB,cAAc,EAAE,IAAI;CAAG"
+}

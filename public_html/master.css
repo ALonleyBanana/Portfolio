@@ -1,0 +1,34 @@
+/* line 1, ../New folder (6)/sass/master.sass */
+body {
+  background: #111;
+  color: white;
+  font-family: helvetica;
+}
+
+/* line 6, ../New folder (6)/sass/master.sass */
+body canvas {
+  border: solid 1px red;
+}
+
+/* line 9, ../New folder (6)/sass/master.sass */
+body #bar {
+  width: 400px;
+}
+
+/* line 11, ../New folder (6)/sass/master.sass */
+body #logo {
+  font-size: 1.4em;
+}
+
+/* line 14, ../New folder (6)/sass/master.sass */
+body #score_container {
+  float: right;
+  display: inline;
+}
+
+/* line 18, ../New folder (6)/sass/master.sass */
+body #pause_menu, body #restart_menu {
+  display: none;
+}
+
+/*# sourceMappingURL=master.css.map */

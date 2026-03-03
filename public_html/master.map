@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "master.css",
+	"sources": [
+		"../sass/master.sass"
+	],
+	"sourcesContent": [
+		"body {\n  background: #111;\n  color: white;\n  font-family: helvetica;\n\n  canvas {\n    border: solid 1px red; }\n\n  #bar {\n    width: 400px; }\n  #logo {\n    font-size: 1.4em; }\n\n  #score_container {\n    float: right;\n    display: inline; }\n\n  #pause_menu, #restart_menu {\n    display: none; } }\n"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,SAAS;CAeF;;;AAlBtB,AAKE,IALE,CAKF,MAAM,CAAC;EACL,MAAM,EAAE,aAAa;CAAG;;;AAN5B,AAQE,IARE,CAQF,IAAI,CAAC;EACH,KAAK,EAAE,KAAK;CAAG;;;AATnB,AAUE,IAVE,CAUF,KAAK,CAAC;EACJ,SAAS,EAAE,KAAK;CAAG;;;AAXvB,AAaE,IAbE,CAaF,gBAAgB,CAAC;EACf,KAAK,EAAE,KAAK;EACZ,OAAO,EAAE,MAAM;CAAG;;;AAftB,AAiBE,IAjBE,CAiBF,WAAW,EAjBb,IAAI,CAiBW,aAAa,CAAC;EACzB,OAAO,EAAE,IAAI;CAAG"
+}
