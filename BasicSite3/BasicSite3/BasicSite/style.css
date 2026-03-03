@@ -1,0 +1,85 @@
+@font-face {
+     font-family: Peanuts;
+     src: url(PEANUTS_.TTF);
+}
+ body {
+     background-color: lightblue;
+     font-family: verdana;
+     font-size: 12px;
+}
+ h1 {
+     font-family: Peanuts;
+     color: blue;
+     text-align: center;
+}
+ p {
+     font-family: verdana;
+     font-size: 20px;
+}
+ a {
+     font-family: verdana;
+     color: white;
+     font-size: 20px;
+     text-decoration: none;
+}
+ a:hover {
+     font-size: 20px;
+     color: #2cb5d3;
+     text-decoration:underline;
+}
+ .BottomPage {
+     font-family: verdana;
+     color: black;
+     font-size: 12px;
+     text-decoration: underline;
+}
+ .MenuDiv{
+     margin: auto;
+     width: 40%;
+     height:40px;
+     padding: 10px;
+    /*border-style:solid;
+     border-width:1px;
+    */
+}
+ .MenuItemDiv{
+     float:left;
+     text-align: center;
+     background-color: #17bbe8;
+     padding:10px;
+}
+ .MenuItemDiv:hover{
+     background-color: #FFFFFF;
+}
+ #TopDiv{
+     margin: auto;
+     width: 40%;
+}
+ #BodyLeftDiv{
+     float:left;
+     width: 12%;
+     height:100%;
+}
+ #BodyContentDiv{
+     float:left;
+     width: 58%;
+     padding-left: 30px;
+     height:100%;
+     font-family: Peanuts;
+     font-size: 13px;
+     float:left;
+}
+ #BodyRightDiv{
+     float:left;
+     width: 12%;
+     height:100%;
+}
+ #BodyBottomDIv{
+     padding-top: 15px;
+     text-align: center;
+     width: 90%;
+     height:100% border-style:solid;
+     font-size: 12px;
+     float:left;
+}
+ 
