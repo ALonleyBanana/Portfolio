@@ -1,0 +1,2580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plx:root xmlns:plx="http://schemas.neumont.edu/CodeGeneration/PLiX" xmlns:prop="urn:schemas-orm-net:PLiX:CLI:Properties">
+	<plx:namespaceImport name="System" />
+	<plx:namespaceImport name="System.Collections.Generic" />
+	<plx:namespaceImport name="System.Collections.ObjectModel" />
+	<plx:namespaceImport name="System.ComponentModel" />
+	<plx:namespaceImport name="System.Xml" />
+	<plx:namespace name="Lab1App">
+		<plx:namespace name="ORMModel1">
+			<plx:class visibility="public" modifier="sealed" name="ORMModel1Context">
+				<plx:leadingInfo>
+					<plx:pragma type="region" data="ORMModel1Context" />
+				</plx:leadingInfo>
+				<plx:trailingInfo>
+					<plx:pragma type="closeRegion" data="ORMModel1Context" />
+				</plx:trailingInfo>
+				<plx:attribute dataTypeName="GeneratedCodeAttribute" dataTypeQualifier="System.CodeDom.Compiler">
+					<plx:passParam>
+						<plx:string>OIALtoPLiX</plx:string>
+					</plx:passParam>
+					<plx:passParam>
+						<plx:string>1.0</plx:string>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:attribute dataTypeName="StructLayoutAttribute" dataTypeQualifier="System.Runtime.InteropServices">
+					<plx:passParam>
+						<plx:callStatic type="field" name="Auto" dataTypeName="LayoutKind" dataTypeQualifier="System.Runtime.InteropServices" />
+					</plx:passParam>
+					<plx:passParam>
+						<plx:binaryOperator type="assignNamed">
+							<plx:left>
+								<plx:nameRef type="namedParameter" name="CharSet" />
+							</plx:left>
+							<plx:right>
+								<plx:callStatic type="field" name="Auto" dataTypeName="CharSet" dataTypeQualifier="System.Runtime.InteropServices" />
+							</plx:right>
+						</plx:binaryOperator>
+					</plx:passParam>
+				</plx:attribute>
+				<plx:implementsInterface dataTypeName="IORMModel1Context" />
+				<plx:function visibility="public" name=".construct">
+					<plx:local name="constraintEnforcementCollectionCallbacksByTypeDictionary" dataTypeName="Dictionary">
+						<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+						<plx:passTypeParam dataTypeName=".object" />
+						<plx:initialize>
+							<plx:inlineStatement dataTypeName="Dictionary">
+								<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+								<plx:passTypeParam dataTypeName=".object" />
+								<plx:assign>
+									<plx:left>
+										<plx:callThis type="field" name="_ContraintEnforcementCollectionCallbacksByTypeDictionary" />
+									</plx:left>
+									<plx:right>
+										<plx:callNew dataTypeName="Dictionary">
+											<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+											<plx:passTypeParam dataTypeName=".object" />
+											<plx:passParam>
+												<plx:value type="i4" data="1" />
+											</plx:passParam>
+											<plx:passParam>
+												<plx:callStatic type="field" name="Instance" dataTypeName="RuntimeTypeHandleEqualityComparer" />
+											</plx:passParam>
+										</plx:callNew>
+									</plx:right>
+								</plx:assign>
+							</plx:inlineStatement>
+						</plx:initialize>
+					</plx:local>
+					<plx:callInstance name="Add">
+						<plx:callObject>
+							<plx:nameRef name="constraintEnforcementCollectionCallbacksByTypeDictionary" />
+						</plx:callObject>
+						<plx:passParam>
+							<plx:callInstance type="property" name="TypeHandle">
+								<plx:callObject>
+									<plx:typeOf dataTypeName="ConstraintEnforcementCollection">
+										<plx:passTypeParam dataTypeName="Patient" />
+										<plx:passTypeParam dataTypeName="DrugAllergy" />
+									</plx:typeOf>
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:passParam>
+						<plx:passParam>
+							<plx:callNew dataTypeName="ConstraintEnforcementCollectionCallbacks">
+								<plx:passTypeParam dataTypeName="Patient" />
+								<plx:passTypeParam dataTypeName="DrugAllergy" />
+								<plx:passParam>
+									<plx:callNew type="newDelegate" dataTypeName="PotentialCollectionModificationCallback">
+										<plx:passTypeParam dataTypeName="Patient" />
+										<plx:passTypeParam dataTypeName="DrugAllergy" />
+										<plx:passParam>
+											<plx:callThis type="methodReference" name="OnPatientDrugAllergyViaPatientCollectionAdding" />
+										</plx:passParam>
+									</plx:callNew>
+								</plx:passParam>
+								<plx:passParam>
+									<plx:callNew type="newDelegate" dataTypeName="CommittedCollectionModificationCallback">
+										<plx:passTypeParam dataTypeName="Patient" />
+										<plx:passTypeParam dataTypeName="DrugAllergy" />
+										<plx:passParam>
+											<plx:callThis type="methodReference" name="OnPatientDrugAllergyViaPatientCollectionAdded" />
+										</plx:passParam>
+									</plx:callNew>
+								</plx:passParam>
+								<plx:passParam>
+									<plx:nullKeyword />
+								</plx:passParam>
+								<plx:passParam>
+									<plx:callNew type="newDelegate" dataTypeName="CommittedCollectionModificationCallback">
+										<plx:passTypeParam dataTypeName="Patient" />
+										<plx:passTypeParam dataTypeName="DrugAllergy" />
+										<plx:passParam>
+											<plx:callThis type="methodReference" name="OnPatientDrugAllergyViaPatientCollectionRemoved" />
+										</plx:passParam>
+									</plx:callNew>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:passParam>
+					</plx:callInstance>
+					<plx:assign>
+						<plx:left>
+							<plx:callThis type="field" name="_PatientReadOnlyCollection" />
+						</plx:left>
+						<plx:right>
+							<plx:callNew dataTypeName="ReadOnlyCollection">
+								<plx:passTypeParam dataTypeName="Patient" />
+								<plx:passParam>
+									<plx:inlineStatement dataTypeName="List">
+										<plx:passTypeParam dataTypeName="Patient" />
+										<plx:assign>
+											<plx:left>
+												<plx:callThis type="field" name="_PatientList" />
+											</plx:left>
+											<plx:right>
+												<plx:callNew dataTypeName="List">
+													<plx:passTypeParam dataTypeName="Patient" />
+												</plx:callNew>
+											</plx:right>
+										</plx:assign>
+									</plx:inlineStatement>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:right>
+					</plx:assign>
+					<plx:assign>
+						<plx:left>
+							<plx:callThis type="field" name="_DrugAllergyReadOnlyCollection" />
+						</plx:left>
+						<plx:right>
+							<plx:callNew dataTypeName="ReadOnlyCollection">
+								<plx:passTypeParam dataTypeName="DrugAllergy" />
+								<plx:passParam>
+									<plx:inlineStatement dataTypeName="List">
+										<plx:passTypeParam dataTypeName="DrugAllergy" />
+										<plx:assign>
+											<plx:left>
+												<plx:callThis type="field" name="_DrugAllergyList" />
+											</plx:left>
+											<plx:right>
+												<plx:callNew dataTypeName="List">
+													<plx:passTypeParam dataTypeName="DrugAllergy" />
+												</plx:callNew>
+											</plx:right>
+										</plx:assign>
+									</plx:inlineStatement>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:right>
+					</plx:assign>
+				</plx:function>
+				<plx:pragma type="region" data="Exception Helpers" />
+				<plx:function visibility="private" modifier="static" overload="true" name="GetDifferentContextsException">
+					<plx:returns dataTypeName="ArgumentException" />
+					<plx:return>
+						<plx:callStatic name="GetDifferentContextsException" dataTypeName="ORMModel1Context">
+							<plx:passParam>
+								<plx:valueKeyword stringize="true" />
+							</plx:passParam>
+						</plx:callStatic>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" modifier="static" overload="true" name="GetDifferentContextsException">
+					<plx:attribute dataTypeName="SuppressMessageAttribute" dataTypeQualifier="System.Diagnostics.CodeAnalysis">
+						<plx:passParam>
+							<plx:string>Microsoft.Usage</plx:string>
+						</plx:passParam>
+						<plx:passParam>
+							<plx:string>CA2208:InstantiateArgumentExceptionsCorrectly</plx:string>
+						</plx:passParam>
+					</plx:attribute>
+					<plx:param name="paramName" dataTypeName=".string" />
+					<plx:returns dataTypeName="ArgumentException" />
+					<plx:return>
+						<plx:callNew dataTypeName="ArgumentException">
+							<plx:passParam>
+								<plx:string data="All objects in a relationship must be part of the same Context." />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="paramName" />
+							</plx:passParam>
+						</plx:callNew>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" modifier="static" name="GetConstraintEnforcementFailedException">
+					<plx:param name="paramName" dataTypeName=".string" />
+					<plx:returns dataTypeName="ArgumentException" />
+					<plx:return>
+						<plx:callNew dataTypeName="ArgumentException">
+							<plx:passParam>
+								<plx:string data="Argument failed constraint enforcement." />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="paramName" />
+							</plx:passParam>
+						</plx:callNew>
+					</plx:return>
+				</plx:function>
+				<plx:pragma type="closeRegion" data="Exception Helpers" />
+				<plx:pragma type="region" data="Lookup and External Constraint Enforcement" />
+				<plx:field visibility="private" readOnly="true" name="_PatientPatientNrDictionary" dataTypeName="Dictionary">
+					<plx:passTypeParam dataTypeName=".i4" />
+					<plx:passTypeParam dataTypeName="Patient" />
+					<plx:initialize>
+						<plx:callNew dataTypeName="Dictionary">
+							<plx:passTypeParam dataTypeName=".i4" />
+							<plx:passTypeParam dataTypeName="Patient" />
+						</plx:callNew>
+					</plx:initialize>
+				</plx:field>
+				<plx:function visibility="public" name="GetPatientByPatientNr">
+					<plx:interfaceMember memberName="GetPatientByPatientNr" dataTypeName="IORMModel1Context" />
+					<plx:param name="patientNr" dataTypeName=".i4" />
+					<plx:returns dataTypeName="Patient" />
+					<plx:return>
+						<plx:callInstance type="indexerCall" name=".implied">
+							<plx:callObject>
+								<plx:callThis type="field" name="_PatientPatientNrDictionary" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="patientNr" />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="public" name="TryGetPatientByPatientNr">
+					<plx:interfaceMember memberName="TryGetPatientByPatientNr" dataTypeName="IORMModel1Context" />
+					<plx:param name="patientNr" dataTypeName=".i4" />
+					<plx:param type="out" name="patient" dataTypeName="Patient" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:return>
+						<plx:callInstance name="TryGetValue">
+							<plx:callObject>
+								<plx:callThis type="field" name="_PatientPatientNrDictionary" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="patientNr" />
+							</plx:passParam>
+							<plx:passParam type="out">
+								<plx:nameRef type="parameter" name="patient" />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:return>
+				</plx:function>
+				<plx:field visibility="private" readOnly="true" name="_DrugAllergyPatientAndDrugNameDictionary" dataTypeName="Dictionary">
+					<plx:passTypeParam dataTypeName="Tuple">
+						<plx:passTypeParam dataTypeName="Patient" />
+						<plx:passTypeParam dataTypeName=".string" />
+					</plx:passTypeParam>
+					<plx:passTypeParam dataTypeName="DrugAllergy" />
+					<plx:initialize>
+						<plx:callNew dataTypeName="Dictionary">
+							<plx:passTypeParam dataTypeName="Tuple">
+								<plx:passTypeParam dataTypeName="Patient" />
+								<plx:passTypeParam dataTypeName=".string" />
+							</plx:passTypeParam>
+							<plx:passTypeParam dataTypeName="DrugAllergy" />
+						</plx:callNew>
+					</plx:initialize>
+				</plx:field>
+				<plx:function visibility="public" name="GetDrugAllergyByPatientAndDrugName">
+					<plx:interfaceMember memberName="GetDrugAllergyByPatientAndDrugName" dataTypeName="IORMModel1Context" />
+					<plx:param name="patient" dataTypeName="Patient" />
+					<plx:param name="drugName" dataTypeName=".string" />
+					<plx:returns dataTypeName="DrugAllergy" />
+					<plx:return>
+						<plx:callInstance type="indexerCall" name=".implied">
+							<plx:callObject>
+								<plx:callThis type="field" name="_DrugAllergyPatientAndDrugNameDictionary" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:callStatic name="CreateTuple" dataTypeName="Tuple">
+									<plx:passMemberTypeParam dataTypeName="Patient" />
+									<plx:passMemberTypeParam dataTypeName=".string" />
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="patient" />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="drugName" />
+									</plx:passParam>
+								</plx:callStatic>
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="public" name="TryGetDrugAllergyByPatientAndDrugName">
+					<plx:interfaceMember memberName="TryGetDrugAllergyByPatientAndDrugName" dataTypeName="IORMModel1Context" />
+					<plx:param name="patient" dataTypeName="Patient" />
+					<plx:param name="drugName" dataTypeName=".string" />
+					<plx:param type="out" name="drugAllergy" dataTypeName="DrugAllergy" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:return>
+						<plx:callInstance name="TryGetValue">
+							<plx:callObject>
+								<plx:callThis type="field" name="_DrugAllergyPatientAndDrugNameDictionary" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:callStatic name="CreateTuple" dataTypeName="Tuple">
+									<plx:passMemberTypeParam dataTypeName="Patient" />
+									<plx:passMemberTypeParam dataTypeName=".string" />
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="patient" />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="drugName" />
+									</plx:passParam>
+								</plx:callStatic>
+							</plx:passParam>
+							<plx:passParam type="out">
+								<plx:nameRef type="parameter" name="drugAllergy" />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientAndDrugNameChanging">
+					<plx:param name="instance" dataTypeName="DrugAllergy" />
+					<plx:param name="newValue" dataTypeName="Tuple">
+						<plx:passTypeParam dataTypeName="Patient" />
+						<plx:passTypeParam dataTypeName=".string" />
+					</plx:param>
+					<plx:returns dataTypeName=".boolean" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="newValue" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:local name="currentInstance" dataTypeName="DrugAllergy" />
+						<plx:branch>
+							<plx:condition>
+								<plx:callInstance name="TryGetValue">
+									<plx:callObject>
+										<plx:callThis type="field" name="_DrugAllergyPatientAndDrugNameDictionary" />
+									</plx:callObject>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="newValue" />
+									</plx:passParam>
+									<plx:passParam type="out">
+										<plx:nameRef name="currentInstance" />
+									</plx:passParam>
+								</plx:callInstance>
+							</plx:condition>
+							<plx:return>
+								<plx:binaryOperator type="identityEquality">
+									<plx:left>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef name="currentInstance" />
+										</plx:cast>
+									</plx:left>
+									<plx:right>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:cast>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:return>
+						</plx:branch>
+					</plx:branch>
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientAndDrugNameChanged">
+					<plx:param name="instance" dataTypeName="DrugAllergy" />
+					<plx:param name="oldValue" dataTypeName="Tuple">
+						<plx:passTypeParam dataTypeName="Patient" />
+						<plx:passTypeParam dataTypeName=".string" />
+					</plx:param>
+					<plx:param name="newValue" dataTypeName="Tuple">
+						<plx:passTypeParam dataTypeName="Patient" />
+						<plx:passTypeParam dataTypeName=".string" />
+					</plx:param>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="oldValue" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:callInstance name="Remove">
+							<plx:callObject>
+								<plx:callThis name="_DrugAllergyPatientAndDrugNameDictionary" type="field" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="oldValue" />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="newValue" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:callInstance name="Add">
+							<plx:callObject>
+								<plx:callThis name="_DrugAllergyPatientAndDrugNameDictionary" type="field" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="newValue" />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="instance" />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:branch>
+				</plx:function>
+				<plx:pragma type="closeRegion" data="Lookup and External Constraint Enforcement" />
+				<plx:pragma type="region" data="ConstraintEnforcementCollection" />
+				<plx:delegate visibility="private" name="PotentialCollectionModificationCallback">
+					<plx:typeParam requireReferenceType="true" name="TClass">
+						<plx:typeConstraint dataTypeName="IHasORMModel1Context" />
+					</plx:typeParam>
+					<plx:typeParam name="TProperty" />
+					<plx:param name="instance" dataTypeName="TClass" />
+					<plx:param name="item" dataTypeName="TProperty" />
+					<plx:returns dataTypeName=".boolean" />
+				</plx:delegate>
+				<plx:delegate visibility="private" name="CommittedCollectionModificationCallback">
+					<plx:typeParam requireReferenceType="true" name="TClass">
+						<plx:typeConstraint dataTypeName="IHasORMModel1Context" />
+					</plx:typeParam>
+					<plx:typeParam name="TProperty" />
+					<plx:param name="instance" dataTypeName="TClass" />
+					<plx:param name="item" dataTypeName="TProperty" />
+				</plx:delegate>
+				<plx:class visibility="private" modifier="sealed" name="ConstraintEnforcementCollectionCallbacks">
+					<plx:attribute dataTypeName="StructLayoutAttribute" dataTypeQualifier="System.Runtime.InteropServices">
+						<plx:passParam>
+							<plx:callStatic type="field" name="Auto" dataTypeName="LayoutKind" dataTypeQualifier="System.Runtime.InteropServices" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:binaryOperator type="assignNamed">
+								<plx:left>
+									<plx:nameRef type="namedParameter" name="CharSet" />
+								</plx:left>
+								<plx:right>
+									<plx:callStatic type="field" name="Auto" dataTypeName="CharSet" dataTypeQualifier="System.Runtime.InteropServices" />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:passParam>
+					</plx:attribute>
+					<plx:typeParam requireReferenceType="true" name="TClass">
+						<plx:typeConstraint dataTypeName="IHasORMModel1Context" />
+					</plx:typeParam>
+					<plx:typeParam name="TProperty" />
+					<plx:function visibility="public" name=".construct">
+						<plx:param name="adding" dataTypeName="PotentialCollectionModificationCallback">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:param>
+						<plx:param name="added" dataTypeName="CommittedCollectionModificationCallback">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:param>
+						<plx:param name="removing" dataTypeName="PotentialCollectionModificationCallback">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:param>
+						<plx:param name="removed" dataTypeName="CommittedCollectionModificationCallback">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:param>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="Adding" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="adding" />
+							</plx:right>
+						</plx:assign>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="Added" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="added" />
+							</plx:right>
+						</plx:assign>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="Removing" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="removing" />
+							</plx:right>
+						</plx:assign>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="Removed" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="removed" />
+							</plx:right>
+						</plx:assign>
+					</plx:function>
+					<plx:field visibility="public" readOnly="true" name="Adding" dataTypeName="PotentialCollectionModificationCallback">
+						<plx:passTypeParam dataTypeName="TClass" />
+						<plx:passTypeParam dataTypeName="TProperty" />
+					</plx:field>
+					<plx:field visibility="public" readOnly="true" name="Added" dataTypeName="CommittedCollectionModificationCallback">
+						<plx:passTypeParam dataTypeName="TClass" />
+						<plx:passTypeParam dataTypeName="TProperty" />
+					</plx:field>
+					<plx:field visibility="public" readOnly="true" name="Removing" dataTypeName="PotentialCollectionModificationCallback">
+						<plx:passTypeParam dataTypeName="TClass" />
+						<plx:passTypeParam dataTypeName="TProperty" />
+					</plx:field>
+					<plx:field visibility="public" readOnly="true" name="Removed" dataTypeName="CommittedCollectionModificationCallback">
+						<plx:passTypeParam dataTypeName="TClass" />
+						<plx:passTypeParam dataTypeName="TProperty" />
+					</plx:field>
+				</plx:class>
+				<plx:function visibility="private" overload="false" name="GetConstraintEnforcementCollectionCallbacks">
+					<plx:typeParam requireReferenceType="true" name="TClass">
+						<plx:typeConstraint dataTypeName="IHasORMModel1Context" />
+					</plx:typeParam>
+					<plx:typeParam name="TProperty" />
+					<plx:returns dataTypeName="ConstraintEnforcementCollectionCallbacks">
+						<plx:passTypeParam dataTypeName="TClass" />
+						<plx:passTypeParam dataTypeName="TProperty" />
+					</plx:returns>
+					<plx:return>
+						<plx:cast type="exceptionCast" dataTypeName="ConstraintEnforcementCollectionCallbacks">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+							<plx:callInstance type="indexerCall" name=".implied">
+								<plx:callObject>
+									<plx:callThis type="field" name="_ContraintEnforcementCollectionCallbacksByTypeDictionary" />
+								</plx:callObject>
+								<plx:passParam>
+									<plx:callInstance type="property" name="TypeHandle">
+										<plx:callObject>
+											<plx:typeOf dataTypeName="ConstraintEnforcementCollection">
+												<plx:passTypeParam dataTypeName="TClass" />
+												<plx:passTypeParam dataTypeName="TProperty" />
+											</plx:typeOf>
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+							</plx:callInstance>
+						</plx:cast>
+					</plx:return>
+				</plx:function>
+				<plx:class visibility="private" modifier="sealed" name="RuntimeTypeHandleEqualityComparer">
+					<plx:attribute dataTypeName="StructLayoutAttribute" dataTypeQualifier="System.Runtime.InteropServices">
+						<plx:passParam>
+							<plx:callStatic type="field" name="Auto" dataTypeName="LayoutKind" dataTypeQualifier="System.Runtime.InteropServices" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:binaryOperator type="assignNamed">
+								<plx:left>
+									<plx:nameRef type="namedParameter" name="CharSet" />
+								</plx:left>
+								<plx:right>
+									<plx:callStatic type="field" name="Auto" dataTypeName="CharSet" dataTypeQualifier="System.Runtime.InteropServices" />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:passParam>
+					</plx:attribute>
+					<plx:implementsInterface dataTypeName="IEqualityComparer">
+						<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+					</plx:implementsInterface>
+					<plx:field visibility="public" static="true" readOnly="true" name="Instance" dataTypeName="RuntimeTypeHandleEqualityComparer">
+						<plx:initialize>
+							<plx:callNew dataTypeName="RuntimeTypeHandleEqualityComparer" />
+						</plx:initialize>
+					</plx:field>
+					<plx:function visibility="private" name=".construct" />
+					<plx:function visibility="public" overload="true" name="Equals">
+						<plx:interfaceMember memberName="Equals" dataTypeName="IEqualityComparer">
+							<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+						</plx:interfaceMember>
+						<plx:param name="x" dataTypeName="RuntimeTypeHandle" />
+						<plx:param name="y" dataTypeName="RuntimeTypeHandle" />
+						<plx:returns dataTypeName=".boolean" />
+						<plx:return>
+							<plx:callInstance name="Equals">
+								<plx:callObject>
+									<plx:nameRef type="parameter" name="x" />
+								</plx:callObject>
+								<plx:passParam>
+									<plx:nameRef type="parameter" name="y" />
+								</plx:passParam>
+							</plx:callInstance>
+						</plx:return>
+					</plx:function>
+					<plx:function visibility="public" overload="true" name="GetHashCode">
+						<plx:interfaceMember memberName="GetHashCode" dataTypeName="IEqualityComparer">
+							<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+						</plx:interfaceMember>
+						<plx:param name="obj" dataTypeName="RuntimeTypeHandle" />
+						<plx:returns dataTypeName=".i4" />
+						<plx:return>
+							<plx:callInstance name="GetHashCode">
+								<plx:callObject>
+									<plx:nameRef type="parameter" name="obj" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:return>
+					</plx:function>
+				</plx:class>
+				<plx:field visibility="private" readOnly="true" name="_ContraintEnforcementCollectionCallbacksByTypeDictionary" dataTypeName="Dictionary">
+					<plx:passTypeParam dataTypeName="RuntimeTypeHandle" />
+					<plx:passTypeParam dataTypeName=".object" />
+				</plx:field>
+				<plx:class visibility="private" modifier="sealed" name="ConstraintEnforcementCollection">
+					<plx:attribute dataTypeName="StructLayoutAttribute" dataTypeQualifier="System.Runtime.InteropServices">
+						<plx:passParam>
+							<plx:callStatic type="field" name="Auto" dataTypeName="LayoutKind" dataTypeQualifier="System.Runtime.InteropServices" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:binaryOperator type="assignNamed">
+								<plx:left>
+									<plx:nameRef type="namedParameter" name="CharSet" />
+								</plx:left>
+								<plx:right>
+									<plx:callStatic type="field" name="Auto" dataTypeName="CharSet" dataTypeQualifier="System.Runtime.InteropServices" />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:passParam>
+					</plx:attribute>
+					<plx:typeParam requireReferenceType="true" name="TClass">
+						<plx:typeConstraint dataTypeName="IHasORMModel1Context" />
+					</plx:typeParam>
+					<plx:typeParam name="TProperty" />
+					<plx:implementsInterface dataTypeName="ICollection">
+						<plx:passTypeParam dataTypeName="TProperty" />
+					</plx:implementsInterface>
+					<plx:field visibility="private" readOnly="true" name="_Instance" dataTypeName="TClass" />
+					<plx:field visibility="private" readOnly="true" name="_List" dataTypeName="List">
+						<plx:passTypeParam dataTypeName="TProperty" />
+						<plx:initialize>
+							<plx:callNew dataTypeName="List">
+								<plx:passTypeParam dataTypeName="TProperty" />
+							</plx:callNew>
+						</plx:initialize>
+					</plx:field>
+					<plx:function visibility="public" name=".construct">
+						<plx:param name="instance" dataTypeName="TClass" />
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_Instance" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="instance" />
+							</plx:right>
+						</plx:assign>
+					</plx:function>
+					<plx:function visibility="privateInterfaceMember" name="GetNonGenericEnumerator">
+						<plx:interfaceMember memberName="GetEnumerator" dataTypeName="IEnumerable" dataTypeQualifier="System.Collections" />
+						<plx:returns dataTypeName="IEnumerator" dataTypeQualifier="System.Collections" />
+						<plx:return>
+							<plx:callThis name="GetEnumerator" />
+						</plx:return>
+					</plx:function>
+					<plx:function visibility="public" name="GetEnumerator">
+						<plx:interfaceMember memberName="GetEnumerator" dataTypeName="IEnumerable">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:returns dataTypeName="IEnumerator">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:returns>
+						<plx:return>
+							<plx:callInstance name="GetEnumerator">
+								<plx:callObject>
+									<plx:callThis type="field" name="_List" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:return>
+					</plx:function>
+					<plx:function visibility="public" name="Add">
+						<plx:interfaceMember memberName="Add" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:param name="item" dataTypeName="TProperty" />
+						<plx:branch>
+							<plx:condition>
+								<plx:binaryOperator type="identityEquality">
+									<plx:left>
+										<plx:nameRef type="parameter" name="item" />
+									</plx:left>
+									<plx:right>
+										<plx:nullKeyword />
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+							<plx:throw>
+								<plx:callNew dataTypeName="ArgumentNullException">
+									<plx:passParam>
+										<plx:string data="item" />
+									</plx:passParam>
+								</plx:callNew>
+							</plx:throw>
+						</plx:branch>
+						<plx:local name="instance" dataTypeName="TClass">
+							<plx:initialize>
+								<plx:callThis type="field" name="_Instance" />
+							</plx:initialize>
+						</plx:local>
+						<plx:local name="callbacks" dataTypeName="ConstraintEnforcementCollectionCallbacks">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+							<plx:initialize>
+								<plx:callInstance name="GetConstraintEnforcementCollectionCallbacks">
+									<plx:passMemberTypeParam dataTypeName="TClass" />
+									<plx:passMemberTypeParam dataTypeName="TProperty" />
+									<plx:callObject>
+										<plx:callInstance type="property" name="Context">
+											<plx:callObject>
+												<plx:nameRef name="instance" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:initialize>
+						</plx:local>
+						<plx:local name="adding" dataTypeName="PotentialCollectionModificationCallback">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+							<plx:initialize>
+								<plx:callInstance type="field" name="Adding">
+									<plx:callObject>
+										<plx:nameRef name="callbacks" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:initialize>
+						</plx:local>
+						<plx:branch>
+							<plx:condition>
+								<plx:binaryOperator type="booleanOr">
+									<plx:left>
+										<plx:binaryOperator type="identityEquality">
+											<plx:left>
+												<plx:cast type="exceptionCast" dataTypeName=".object">
+													<plx:nameRef name="adding" />
+												</plx:cast>
+											</plx:left>
+											<plx:right>
+												<plx:nullKeyword />
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:left>
+									<plx:right>
+										<plx:callInstance type="delegateCall" name=".implied">
+											<plx:callObject>
+												<plx:nameRef name="adding" />
+											</plx:callObject>
+											<plx:passParam>
+												<plx:nameRef name="instance" />
+											</plx:passParam>
+											<plx:passParam>
+												<plx:nameRef type="parameter" name="item" />
+											</plx:passParam>
+										</plx:callInstance>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+							<plx:callInstance name="Add">
+								<plx:callObject>
+									<plx:callThis type="field" name="_List" />
+								</plx:callObject>
+								<plx:passParam>
+									<plx:nameRef type="parameter" name="item" />
+								</plx:passParam>
+							</plx:callInstance>
+							<plx:local name="added" dataTypeName="CommittedCollectionModificationCallback">
+								<plx:passTypeParam dataTypeName="TClass" />
+								<plx:passTypeParam dataTypeName="TProperty" />
+								<plx:initialize>
+									<plx:callInstance type="field" name="Added">
+										<plx:callObject>
+											<plx:nameRef name="callbacks" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:initialize>
+							</plx:local>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="identityInequality">
+										<plx:left>
+											<plx:cast type="exceptionCast" dataTypeName=".object">
+												<plx:nameRef name="added" />
+											</plx:cast>
+										</plx:left>
+										<plx:right>
+											<plx:nullKeyword />
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:callInstance type="delegateCall" name=".implied">
+									<plx:callObject>
+										<plx:nameRef name="added" />
+									</plx:callObject>
+									<plx:passParam>
+										<plx:nameRef name="instance" />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="item" />
+									</plx:passParam>
+								</plx:callInstance>
+							</plx:branch>
+						</plx:branch>
+					</plx:function>
+					<plx:function visibility="public" name="Remove">
+						<plx:interfaceMember memberName="Remove" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:param name="item" dataTypeName="TProperty" />
+						<plx:returns dataTypeName=".boolean" />
+						<plx:branch>
+							<plx:condition>
+								<plx:binaryOperator type="identityEquality">
+									<plx:left>
+										<plx:nameRef type="parameter" name="item" />
+									</plx:left>
+									<plx:right>
+										<plx:nullKeyword />
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+							<plx:throw>
+								<plx:callNew dataTypeName="ArgumentNullException">
+									<plx:passParam>
+										<plx:string data="item" />
+									</plx:passParam>
+								</plx:callNew>
+							</plx:throw>
+						</plx:branch>
+						<plx:local name="instance" dataTypeName="TClass">
+							<plx:initialize>
+								<plx:callThis type="field" name="_Instance" />
+							</plx:initialize>
+						</plx:local>
+						<plx:local name="callbacks" dataTypeName="ConstraintEnforcementCollectionCallbacks">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+							<plx:initialize>
+								<plx:callInstance name="GetConstraintEnforcementCollectionCallbacks">
+									<plx:passMemberTypeParam dataTypeName="TClass" />
+									<plx:passMemberTypeParam dataTypeName="TProperty" />
+									<plx:callObject>
+										<plx:callInstance type="property" name="Context">
+											<plx:callObject>
+												<plx:nameRef name="instance" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:initialize>
+						</plx:local>
+						<plx:local name="removing" dataTypeName="PotentialCollectionModificationCallback">
+							<plx:passTypeParam dataTypeName="TClass" />
+							<plx:passTypeParam dataTypeName="TProperty" />
+							<plx:initialize>
+								<plx:callInstance type="field" name="Removing">
+									<plx:callObject>
+										<plx:nameRef name="callbacks" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:initialize>
+						</plx:local>
+						<plx:branch>
+							<plx:condition>
+								<plx:binaryOperator type="booleanOr">
+									<plx:left>
+										<plx:binaryOperator type="identityEquality">
+											<plx:left>
+												<plx:cast type="exceptionCast" dataTypeName=".object">
+													<plx:nameRef name="removing" />
+												</plx:cast>
+											</plx:left>
+											<plx:right>
+												<plx:nullKeyword />
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:left>
+									<plx:right>
+										<plx:callInstance type="delegateCall" name=".implied">
+											<plx:callObject>
+												<plx:nameRef name="removing" />
+											</plx:callObject>
+											<plx:passParam>
+												<plx:nameRef name="instance" />
+											</plx:passParam>
+											<plx:passParam>
+												<plx:nameRef type="parameter" name="item" />
+											</plx:passParam>
+										</plx:callInstance>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+							<plx:branch>
+								<plx:condition>
+									<plx:callInstance name="Remove">
+										<plx:callObject>
+											<plx:callThis type="field" name="_List" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:nameRef type="parameter" name="item" />
+										</plx:passParam>
+									</plx:callInstance>
+								</plx:condition>
+								<plx:local name="removed" dataTypeName="CommittedCollectionModificationCallback">
+									<plx:passTypeParam dataTypeName="TClass" />
+									<plx:passTypeParam dataTypeName="TProperty" />
+									<plx:initialize>
+										<plx:callInstance type="field" name="Removed">
+											<plx:callObject>
+												<plx:nameRef name="callbacks" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:initialize>
+								</plx:local>
+								<plx:branch>
+									<plx:condition>
+										<plx:binaryOperator type="identityInequality">
+											<plx:left>
+												<plx:cast type="exceptionCast" dataTypeName=".object">
+													<plx:nameRef name="removed" />
+												</plx:cast>
+											</plx:left>
+											<plx:right>
+												<plx:nullKeyword />
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:condition>
+									<plx:callInstance type="delegateCall" name=".implied">
+										<plx:callObject>
+											<plx:nameRef name="removed" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:nameRef name="instance" />
+										</plx:passParam>
+										<plx:passParam>
+											<plx:nameRef type="parameter" name="item" />
+										</plx:passParam>
+									</plx:callInstance>
+								</plx:branch>
+								<plx:return>
+									<plx:trueKeyword />
+								</plx:return>
+							</plx:branch>
+						</plx:branch>
+						<plx:return>
+							<plx:falseKeyword />
+						</plx:return>
+					</plx:function>
+					<plx:function visibility="public" name="Clear">
+						<plx:interfaceMember memberName="Clear" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:local name="list" dataTypeName="List">
+							<plx:passTypeParam dataTypeName="TProperty" />
+							<plx:initialize>
+								<plx:callThis type="field" name="_List" />
+							</plx:initialize>
+						</plx:local>
+						<plx:loop>
+							<plx:initializeLoop>
+								<plx:local name="i" dataTypeName=".i4">
+									<plx:initialize>
+										<plx:binaryOperator type="subtract">
+											<plx:left>
+												<plx:callInstance type="property" name="Count">
+													<plx:callObject>
+														<plx:nameRef name="list" />
+													</plx:callObject>
+												</plx:callInstance>
+											</plx:left>
+											<plx:right>
+												<plx:value type="i4" data="1" />
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:initialize>
+								</plx:local>
+							</plx:initializeLoop>
+							<plx:condition>
+								<plx:binaryOperator type="greaterThan">
+									<plx:left>
+										<plx:nameRef name="i" />
+									</plx:left>
+									<plx:right>
+										<plx:value type="i4" data="0" />
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+							<plx:beforeLoop>
+								<plx:decrement>
+									<plx:nameRef name="i" />
+								</plx:decrement>
+							</plx:beforeLoop>
+							<plx:callThis name="Remove">
+								<plx:passParam>
+									<plx:callInstance type="indexerCall" name=".implied">
+										<plx:callObject>
+											<plx:nameRef name="list" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:nameRef name="i" />
+										</plx:passParam>
+									</plx:callInstance>
+								</plx:passParam>
+							</plx:callThis>
+						</plx:loop>
+					</plx:function>
+					<plx:function visibility="public" name="Contains">
+						<plx:interfaceMember memberName="Contains" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:param name="item" dataTypeName="TProperty" />
+						<plx:returns dataTypeName=".boolean" />
+						<plx:return>
+							<plx:binaryOperator type="booleanAnd">
+								<plx:left>
+									<plx:binaryOperator type="identityInequality">
+										<plx:left>
+											<plx:nameRef type="parameter" name="item" />
+										</plx:left>
+										<plx:right>
+											<plx:nullKeyword />
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:left>
+								<plx:right>
+									<plx:callInstance name="Contains">
+										<plx:callObject>
+											<plx:callThis type="field" name="_List" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:nameRef type="parameter" name="item" />
+										</plx:passParam>
+									</plx:callInstance>
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:return>
+					</plx:function>
+					<plx:function visibility="public" name="CopyTo">
+						<plx:interfaceMember memberName="CopyTo" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:param name="array" dataTypeName="TProperty" dataTypeIsSimpleArray="true" />
+						<plx:param name="arrayIndex" dataTypeName=".i4" />
+						<plx:callInstance name="CopyTo">
+							<plx:callObject>
+								<plx:callThis type="field" name="_List" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="array" />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="arrayIndex" />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:function>
+					<plx:property visibility="public" name="Count">
+						<plx:interfaceMember memberName="Count" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:returns dataTypeName=".i4" />
+						<plx:get>
+							<plx:return>
+								<plx:callInstance type="property" name="Count">
+									<plx:callObject>
+										<plx:callThis type="field" name="_List" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:return>
+						</plx:get>
+					</plx:property>
+					<plx:property visibility="public" name="IsReadOnly">
+						<plx:interfaceMember memberName="IsReadOnly" dataTypeName="ICollection">
+							<plx:passTypeParam dataTypeName="TProperty" />
+						</plx:interfaceMember>
+						<plx:returns dataTypeName=".boolean" />
+						<plx:get>
+							<plx:return>
+								<plx:falseKeyword />
+							</plx:return>
+						</plx:get>
+					</plx:property>
+				</plx:class>
+				<plx:pragma type="closeRegion" data="ConstraintEnforcementCollection" />
+				<plx:pragma type="region" data="Patient" />
+				<plx:function visibility="public" name="CreatePatient">
+					<plx:interfaceMember memberName="CreatePatient" dataTypeName="IORMModel1Context" />
+					<plx:param name="patientNr" dataTypeName=".i4" />
+					<plx:param name="patientName" dataTypeName=".string" />
+					<plx:returns dataTypeName="Patient" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityEquality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="patientName" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callNew dataTypeName="ArgumentNullException">
+								<plx:passParam>
+									<plx:string>patientName</plx:string>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:throw>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:unaryOperator type="booleanNot">
+								<plx:callThis name="OnPatientPatientNrChanging">
+									<plx:passParam>
+										<plx:nullKeyword />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="patientNr" />
+									</plx:passParam>
+								</plx:callThis>
+							</plx:unaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callStatic name="GetConstraintEnforcementFailedException" dataTypeName="ORMModel1Context">
+								<plx:passParam>
+									<plx:string>patientNr</plx:string>
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:throw>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:unaryOperator type="booleanNot">
+								<plx:callThis name="OnPatientPatientNameChanging">
+									<plx:passParam>
+										<plx:nullKeyword />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="patientName" />
+									</plx:passParam>
+								</plx:callThis>
+							</plx:unaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callStatic name="GetConstraintEnforcementFailedException" dataTypeName="ORMModel1Context">
+								<plx:passParam>
+									<plx:string>patientName</plx:string>
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:throw>
+					</plx:branch>
+					<plx:return>
+						<plx:callNew dataTypeName="PatientImpl">
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="patientNr" />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="patientName" />
+							</plx:passParam>
+						</plx:callNew>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientPatientNrChanging">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="newValue" dataTypeName=".i4" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:local name="currentInstance" dataTypeName="Patient" />
+					<plx:branch>
+						<plx:condition>
+							<plx:callInstance name="TryGetValue">
+								<plx:callObject>
+									<plx:callThis type="field" name="_PatientPatientNrDictionary" />
+								</plx:callObject>
+								<plx:passParam>
+									<plx:nameRef type="parameter" name="newValue" />
+								</plx:passParam>
+								<plx:passParam type="out">
+									<plx:nameRef name="currentInstance" />
+								</plx:passParam>
+							</plx:callInstance>
+						</plx:condition>
+						<plx:branch>
+							<plx:condition>
+								<plx:binaryOperator type="identityInequality">
+									<plx:left>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef name="currentInstance" />
+										</plx:cast>
+									</plx:left>
+									<plx:right>
+										<plx:cast type="exceptionCast" dataTypeName=".object">
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:cast>
+									</plx:right>
+								</plx:binaryOperator>
+							</plx:condition>
+							<plx:return>
+								<plx:falseKeyword />
+							</plx:return>
+						</plx:branch>
+					</plx:branch>
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" overload="true" name="OnPatientPatientNrChanged">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="oldValue" dataTypeName="Nullable">
+						<plx:passTypeParam dataTypeName=".i4" />
+					</plx:param>
+					<plx:callInstance name="Add">
+						<plx:callObject>
+							<plx:callThis type="field" name="_PatientPatientNrDictionary" />
+						</plx:callObject>
+						<plx:passParam>
+							<plx:callInstance type="property" name="PatientNr">
+								<plx:callObject>
+									<plx:nameRef type="parameter" name="instance" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="instance" />
+						</plx:passParam>
+					</plx:callInstance>
+					<plx:branch>
+						<plx:condition>
+							<plx:callInstance type="property" name="HasValue">
+								<plx:callObject>
+									<plx:nameRef type="parameter" name="oldValue" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:condition>
+						<plx:callInstance name="Remove">
+							<plx:callObject>
+								<plx:callThis type="field" name="_PatientPatientNrDictionary" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:callInstance name="GetValueOrDefault">
+									<plx:callObject>
+										<plx:nameRef type="parameter" name="oldValue" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:branch>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientPatientNameChanging">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="newValue" dataTypeName=".string" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientIsSmokerChanging">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="newValue" dataTypeName="Nullable">
+						<plx:passTypeParam dataTypeName=".boolean" />
+					</plx:param>
+					<plx:returns dataTypeName=".boolean" />
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientDrugAllergyViaPatientCollectionAdding">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="item" dataTypeName="DrugAllergy" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:thisKeyword />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:callInstance type="property" name="Context">
+											<plx:callObject>
+												<plx:nameRef type="parameter" name="item" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:cast>
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callStatic name="GetDifferentContextsException" dataTypeName="ORMModel1Context">
+								<plx:passParam>
+									<plx:string data="item" />
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:throw>
+					</plx:branch>
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientDrugAllergyViaPatientCollectionAdded">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="item" dataTypeName="DrugAllergy" />
+					<plx:assign>
+						<plx:left>
+							<plx:callInstance type="property" name="Patient">
+								<plx:callObject>
+									<plx:nameRef type="parameter" name="item" />
+								</plx:callObject>
+							</plx:callInstance>
+						</plx:left>
+						<plx:right>
+							<plx:nameRef type="parameter" name="instance" />
+						</plx:right>
+					</plx:assign>
+				</plx:function>
+				<plx:function visibility="private" name="OnPatientDrugAllergyViaPatientCollectionRemoved">
+					<plx:param name="instance" dataTypeName="Patient" />
+					<plx:param name="item" dataTypeName="DrugAllergy" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityEquality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:callInstance type="property" name="Patient">
+											<plx:callObject>
+												<plx:nameRef type="parameter" name="item" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="instance" />
+									</plx:cast>
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:assign>
+							<plx:left>
+								<plx:callInstance type="property" name="Patient">
+									<plx:callObject>
+										<plx:nameRef type="parameter" name="item" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:assign>
+					</plx:branch>
+				</plx:function>
+				<plx:field visibility="private" readOnly="true" name="_PatientList" dataTypeName="List">
+					<plx:passTypeParam dataTypeName="Patient" />
+				</plx:field>
+				<plx:field visibility="private" readOnly="true" name="_PatientReadOnlyCollection" dataTypeName="ReadOnlyCollection">
+					<plx:passTypeParam dataTypeName="Patient" />
+				</plx:field>
+				<plx:property visibility="public" name="PatientCollection">
+					<plx:interfaceMember memberName="PatientCollection" dataTypeName="IORMModel1Context" />
+					<plx:returns dataTypeName="IEnumerable">
+						<plx:passTypeParam dataTypeName="Patient" />
+					</plx:returns>
+					<plx:get>
+						<plx:return>
+							<plx:callThis type="field" name="_PatientReadOnlyCollection" />
+						</plx:return>
+					</plx:get>
+				</plx:property>
+				<plx:class visibility="private" modifier="sealed" name="PatientImpl">
+					<plx:leadingInfo>
+						<plx:pragma type="region" data="PatientImpl" />
+					</plx:leadingInfo>
+					<plx:trailingInfo>
+						<plx:pragma type="closeRegion" data="PatientImpl" />
+					</plx:trailingInfo>
+					<plx:attribute dataTypeName="StructLayoutAttribute" dataTypeQualifier="System.Runtime.InteropServices">
+						<plx:passParam>
+							<plx:callStatic type="field" name="Auto" dataTypeName="LayoutKind" dataTypeQualifier="System.Runtime.InteropServices" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:binaryOperator type="assignNamed">
+								<plx:left>
+									<plx:nameRef type="namedParameter" name="CharSet" />
+								</plx:left>
+								<plx:right>
+									<plx:callStatic type="field" name="Auto" dataTypeName="CharSet" dataTypeQualifier="System.Runtime.InteropServices" />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:passParam>
+					</plx:attribute>
+					<plx:derivesFromClass dataTypeName="Patient" />
+					<plx:function visibility="public" name=".construct">
+						<plx:param name="context" dataTypeName="ORMModel1Context" />
+						<plx:param name="patientNr" dataTypeName=".i4" />
+						<plx:param name="patientName" dataTypeName=".string" />
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_Context" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="context" />
+							</plx:right>
+						</plx:assign>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_DrugAllergyViaPatientCollection" />
+							</plx:left>
+							<plx:right>
+								<plx:callNew dataTypeName="ConstraintEnforcementCollection">
+									<plx:passTypeParam dataTypeName="Patient" />
+									<plx:passTypeParam dataTypeName="DrugAllergy" />
+									<plx:passParam>
+										<plx:thisKeyword />
+									</plx:passParam>
+								</plx:callNew>
+							</plx:right>
+						</plx:assign>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_PatientNr" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="patientNr" />
+							</plx:right>
+						</plx:assign>
+						<plx:callInstance name="OnPatientPatientNrChanged">
+							<plx:callObject>
+								<plx:nameRef type="parameter" name="context" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nullKeyword />
+							</plx:passParam>
+						</plx:callInstance>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_PatientName" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="patientName" />
+							</plx:right>
+						</plx:assign>
+						<plx:callInstance name="Add">
+							<plx:callObject>
+								<plx:callInstance type="field" name="_PatientList">
+									<plx:callObject>
+										<plx:nameRef type="parameter" name="context" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:callObject>
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:function>
+					<plx:field visibility="private" readOnly="true" name="_Context" dataTypeName="ORMModel1Context" />
+					<plx:property visibility="public" modifier="sealedOverride" name="Context">
+						<plx:returns dataTypeName="ORMModel1Context" />
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_Context" />
+							</plx:return>
+						</plx:get>
+					</plx:property>
+					<plx:field visibility="private" readOnly="false" name="_PatientNr" dataTypeName=".i4" />
+					<plx:property visibility="public" modifier="sealedOverride" name="PatientNr">
+						<plx:returns dataTypeName=".i4" />
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_PatientNr" />
+							</plx:return>
+						</plx:get>
+						<plx:set>
+							<plx:local name="oldValue" dataTypeName=".i4">
+								<plx:initialize>
+									<plx:callThis type="field" name="_PatientNr" />
+								</plx:initialize>
+							</plx:local>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="inequality">
+										<plx:left>
+											<plx:nameRef name="oldValue" />
+										</plx:left>
+										<plx:right>
+											<plx:valueKeyword />
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:branch>
+									<plx:condition>
+										<plx:binaryOperator type="booleanAnd">
+											<plx:left>
+												<plx:callInstance name="OnPatientPatientNrChanging">
+													<plx:callObject>
+														<plx:callThis type="field" name="_Context" />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:thisKeyword />
+													</plx:passParam>
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:left>
+											<plx:right>
+												<plx:callThis accessor="base" name="OnPatientNrChanging">
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callThis>
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:condition>
+									<plx:assign>
+										<plx:left>
+											<plx:callThis type="field" name="_PatientNr" />
+										</plx:left>
+										<plx:right>
+											<plx:valueKeyword />
+										</plx:right>
+									</plx:assign>
+									<plx:callInstance name="OnPatientPatientNrChanged">
+										<plx:callObject>
+											<plx:callThis type="field" name="_Context" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:thisKeyword />
+										</plx:passParam>
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callInstance>
+									<plx:callThis accessor="base" name="OnPatientNrChanged">
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callThis>
+								</plx:branch>
+							</plx:branch>
+						</plx:set>
+					</plx:property>
+					<plx:field visibility="private" readOnly="false" name="_PatientName" dataTypeName=".string" />
+					<plx:property visibility="public" modifier="sealedOverride" name="PatientName">
+						<plx:returns dataTypeName=".string" />
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_PatientName" />
+							</plx:return>
+						</plx:get>
+						<plx:set>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="identityEquality">
+										<plx:left>
+											<plx:cast type="exceptionCast" dataTypeName=".object">
+												<plx:valueKeyword />
+											</plx:cast>
+										</plx:left>
+										<plx:right>
+											<plx:nullKeyword />
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:throw>
+									<plx:callNew dataTypeName="ArgumentNullException">
+										<plx:passParam>
+											<plx:valueKeyword stringize="true" />
+										</plx:passParam>
+									</plx:callNew>
+								</plx:throw>
+							</plx:branch>
+							<plx:local name="oldValue" dataTypeName=".string">
+								<plx:initialize>
+									<plx:callThis type="field" name="_PatientName" />
+								</plx:initialize>
+							</plx:local>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="booleanAnd">
+										<plx:left>
+											<plx:binaryOperator type="identityInequality">
+												<plx:left>
+													<plx:cast type="exceptionCast" dataTypeName=".object">
+														<plx:nameRef name="oldValue" />
+													</plx:cast>
+												</plx:left>
+												<plx:right>
+													<plx:cast type="exceptionCast" dataTypeName=".object">
+														<plx:valueKeyword />
+													</plx:cast>
+												</plx:right>
+											</plx:binaryOperator>
+										</plx:left>
+										<plx:right>
+											<plx:unaryOperator type="booleanNot">
+												<plx:callInstance name="Equals">
+													<plx:callObject>
+														<plx:valueKeyword />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:nameRef name="oldValue" />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:unaryOperator>
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:branch>
+									<plx:condition>
+										<plx:binaryOperator type="booleanAnd">
+											<plx:left>
+												<plx:callInstance name="OnPatientPatientNameChanging">
+													<plx:callObject>
+														<plx:callThis type="field" name="_Context" />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:thisKeyword />
+													</plx:passParam>
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:left>
+											<plx:right>
+												<plx:callThis accessor="base" name="OnPatientNameChanging">
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callThis>
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:condition>
+									<plx:assign>
+										<plx:left>
+											<plx:callThis type="field" name="_PatientName" />
+										</plx:left>
+										<plx:right>
+											<plx:valueKeyword />
+										</plx:right>
+									</plx:assign>
+									<plx:callThis accessor="base" name="OnPatientNameChanged">
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callThis>
+								</plx:branch>
+							</plx:branch>
+						</plx:set>
+					</plx:property>
+					<plx:field visibility="private" readOnly="false" name="_IsSmoker" dataTypeName="Nullable">
+						<plx:passTypeParam dataTypeName=".boolean" />
+					</plx:field>
+					<plx:property visibility="public" modifier="sealedOverride" name="IsSmoker">
+						<plx:returns dataTypeName="Nullable">
+							<plx:passTypeParam dataTypeName=".boolean" />
+						</plx:returns>
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_IsSmoker" />
+							</plx:return>
+						</plx:get>
+						<plx:set>
+							<plx:local name="oldValue" dataTypeName="Nullable">
+								<plx:passTypeParam dataTypeName=".boolean" />
+								<plx:initialize>
+									<plx:callThis type="field" name="_IsSmoker" />
+								</plx:initialize>
+							</plx:local>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="booleanOr">
+										<plx:left>
+											<plx:binaryOperator type="inequality">
+												<plx:left>
+													<plx:callInstance name="GetValueOrDefault">
+														<plx:callObject>
+															<plx:nameRef name="oldValue" />
+														</plx:callObject>
+													</plx:callInstance>
+												</plx:left>
+												<plx:right>
+													<plx:callInstance name="GetValueOrDefault">
+														<plx:callObject>
+															<plx:valueKeyword />
+														</plx:callObject>
+													</plx:callInstance>
+												</plx:right>
+											</plx:binaryOperator>
+										</plx:left>
+										<plx:right>
+											<plx:binaryOperator type="inequality">
+												<plx:left>
+													<plx:callInstance type="property" name="HasValue">
+														<plx:callObject>
+															<plx:nameRef name="oldValue" />
+														</plx:callObject>
+													</plx:callInstance>
+												</plx:left>
+												<plx:right>
+													<plx:callInstance type="property" name="HasValue">
+														<plx:callObject>
+															<plx:valueKeyword />
+														</plx:callObject>
+													</plx:callInstance>
+												</plx:right>
+											</plx:binaryOperator>
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:branch>
+									<plx:condition>
+										<plx:binaryOperator type="booleanAnd">
+											<plx:left>
+												<plx:callInstance name="OnPatientIsSmokerChanging">
+													<plx:callObject>
+														<plx:callThis type="field" name="_Context" />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:thisKeyword />
+													</plx:passParam>
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:left>
+											<plx:right>
+												<plx:callThis accessor="base" name="OnIsSmokerChanging">
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callThis>
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:condition>
+									<plx:assign>
+										<plx:left>
+											<plx:callThis type="field" name="_IsSmoker" />
+										</plx:left>
+										<plx:right>
+											<plx:valueKeyword />
+										</plx:right>
+									</plx:assign>
+									<plx:callThis accessor="base" name="OnIsSmokerChanged">
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callThis>
+								</plx:branch>
+							</plx:branch>
+						</plx:set>
+					</plx:property>
+					<plx:field visibility="private" readOnly="true" name="_DrugAllergyViaPatientCollection" dataTypeName="IEnumerable">
+						<plx:passTypeParam dataTypeName="DrugAllergy" />
+					</plx:field>
+					<plx:property visibility="public" modifier="sealedOverride" name="DrugAllergyViaPatientCollection">
+						<plx:returns dataTypeName="IEnumerable">
+							<plx:passTypeParam dataTypeName="DrugAllergy" />
+						</plx:returns>
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_DrugAllergyViaPatientCollection" />
+							</plx:return>
+						</plx:get>
+					</plx:property>
+				</plx:class>
+				<plx:pragma type="closeRegion" data="Patient" />
+				<plx:pragma type="region" data="DrugAllergy" />
+				<plx:function visibility="public" name="CreateDrugAllergy">
+					<plx:interfaceMember memberName="CreateDrugAllergy" dataTypeName="IORMModel1Context" />
+					<plx:param name="drugName" dataTypeName=".string" />
+					<plx:param name="patient" dataTypeName="Patient" />
+					<plx:returns dataTypeName="DrugAllergy" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityEquality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="drugName" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callNew dataTypeName="ArgumentNullException">
+								<plx:passParam>
+									<plx:string>drugName</plx:string>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:throw>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityEquality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="patient" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callNew dataTypeName="ArgumentNullException">
+								<plx:passParam>
+									<plx:string>patient</plx:string>
+								</plx:passParam>
+							</plx:callNew>
+						</plx:throw>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:unaryOperator type="booleanNot">
+								<plx:callThis name="OnDrugAllergyDrugNameChanging">
+									<plx:passParam>
+										<plx:nullKeyword />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="drugName" />
+									</plx:passParam>
+								</plx:callThis>
+							</plx:unaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callStatic name="GetConstraintEnforcementFailedException" dataTypeName="ORMModel1Context">
+								<plx:passParam>
+									<plx:string>drugName</plx:string>
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:throw>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:unaryOperator type="booleanNot">
+								<plx:callThis name="OnDrugAllergyPatientChanging">
+									<plx:passParam>
+										<plx:nullKeyword />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="patient" />
+									</plx:passParam>
+								</plx:callThis>
+							</plx:unaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callStatic name="GetConstraintEnforcementFailedException" dataTypeName="ORMModel1Context">
+								<plx:passParam>
+									<plx:string>patient</plx:string>
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:throw>
+					</plx:branch>
+					<plx:return>
+						<plx:callNew dataTypeName="DrugAllergyImpl">
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="drugName" />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="patient" />
+							</plx:passParam>
+						</plx:callNew>
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" name="OnDrugAllergyDrugNameChanging">
+					<plx:param name="instance" dataTypeName="DrugAllergy" />
+					<plx:param name="newValue" dataTypeName=".string" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="instance" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:branch>
+							<plx:condition>
+								<plx:unaryOperator type="booleanNot">
+									<plx:callThis name="OnPatientAndDrugNameChanging">
+										<plx:passParam>
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:passParam>
+										<plx:passParam>
+											<plx:callStatic name="CreateTuple" dataTypeName="Tuple">
+												<plx:passMemberTypeParam dataTypeName="Patient" />
+												<plx:passMemberTypeParam dataTypeName=".string" />
+												<plx:passParam>
+													<plx:callInstance type="property" name="Patient">
+														<plx:callObject>
+															<plx:nameRef type="parameter" name="instance" />
+														</plx:callObject>
+													</plx:callInstance>
+												</plx:passParam>
+												<plx:passParam>
+													<plx:nameRef type="parameter" name="newValue" />
+												</plx:passParam>
+											</plx:callStatic>
+										</plx:passParam>
+									</plx:callThis>
+								</plx:unaryOperator>
+							</plx:condition>
+							<plx:return>
+								<plx:falseKeyword />
+							</plx:return>
+						</plx:branch>
+					</plx:branch>
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" overload="true" name="OnDrugAllergyDrugNameChanged">
+					<plx:param name="instance" dataTypeName="DrugAllergy" />
+					<plx:param name="oldValue" dataTypeName=".string" />
+					<plx:local name="PatientAndDrugNameOldValueTuple" dataTypeName="Tuple">
+						<plx:passTypeParam dataTypeName="Patient" />
+						<plx:passTypeParam dataTypeName=".string" />
+					</plx:local>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="oldValue" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:assign>
+							<plx:left>
+								<plx:nameRef name="PatientAndDrugNameOldValueTuple" />
+							</plx:left>
+							<plx:right>
+								<plx:callStatic dataTypeName="Tuple" name="CreateTuple">
+									<plx:passMemberTypeParam dataTypeName="Patient" />
+									<plx:passMemberTypeParam dataTypeName=".string" />
+									<plx:passParam>
+										<plx:callInstance type="property" name="Patient">
+											<plx:callObject>
+												<plx:nameRef type="parameter" name="instance" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:passParam>
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="oldValue" />
+									</plx:passParam>
+								</plx:callStatic>
+							</plx:right>
+						</plx:assign>
+					</plx:branch>
+					<plx:fallbackBranch>
+						<plx:assign>
+							<plx:left>
+								<plx:nameRef name="PatientAndDrugNameOldValueTuple" />
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:assign>
+					</plx:fallbackBranch>
+					<plx:callThis name="OnPatientAndDrugNameChanged">
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="instance" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef name="PatientAndDrugNameOldValueTuple" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:callStatic dataTypeName="Tuple" name="CreateTuple">
+								<plx:passMemberTypeParam dataTypeName="Patient" />
+								<plx:passMemberTypeParam dataTypeName=".string" />
+								<plx:passParam>
+									<plx:callInstance type="property" name="Patient">
+										<plx:callObject>
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+								<plx:passParam>
+									<plx:callInstance type="property" name="DrugName">
+										<plx:callObject>
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:passParam>
+					</plx:callThis>
+				</plx:function>
+				<plx:function visibility="private" name="OnDrugAllergyPatientChanging">
+					<plx:param name="instance" dataTypeName="DrugAllergy" />
+					<plx:param name="newValue" dataTypeName="Patient" />
+					<plx:returns dataTypeName=".boolean" />
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:thisKeyword />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:callInstance type="property" name="Context">
+											<plx:callObject>
+												<plx:nameRef type="parameter" name="newValue" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:cast>
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:throw>
+							<plx:callStatic name="GetDifferentContextsException" dataTypeName="ORMModel1Context" />
+						</plx:throw>
+					</plx:branch>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="instance" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:branch>
+							<plx:condition>
+								<plx:unaryOperator type="booleanNot">
+									<plx:callThis name="OnPatientAndDrugNameChanging">
+										<plx:passParam>
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:passParam>
+										<plx:passParam>
+											<plx:callStatic name="CreateTuple" dataTypeName="Tuple">
+												<plx:passMemberTypeParam dataTypeName="Patient" />
+												<plx:passMemberTypeParam dataTypeName=".string" />
+												<plx:passParam>
+													<plx:nameRef type="parameter" name="newValue" />
+												</plx:passParam>
+												<plx:passParam>
+													<plx:callInstance type="property" name="DrugName">
+														<plx:callObject>
+															<plx:nameRef type="parameter" name="instance" />
+														</plx:callObject>
+													</plx:callInstance>
+												</plx:passParam>
+											</plx:callStatic>
+										</plx:passParam>
+									</plx:callThis>
+								</plx:unaryOperator>
+							</plx:condition>
+							<plx:return>
+								<plx:falseKeyword />
+							</plx:return>
+						</plx:branch>
+					</plx:branch>
+					<plx:return>
+						<plx:trueKeyword />
+					</plx:return>
+				</plx:function>
+				<plx:function visibility="private" overload="true" name="OnDrugAllergyPatientChanged">
+					<plx:param name="instance" dataTypeName="DrugAllergy" />
+					<plx:param name="oldValue" dataTypeName="Patient" />
+					<plx:callInstance name="Add">
+						<plx:callObject>
+							<plx:cast type="exceptionCast" dataTypeName="ICollection">
+								<plx:passTypeParam dataTypeName="DrugAllergy" />
+								<plx:callInstance type="property" name="DrugAllergyViaPatientCollection">
+									<plx:callObject>
+										<plx:callInstance type="property" name="Patient">
+											<plx:callObject>
+												<plx:nameRef type="parameter" name="instance" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:cast>
+						</plx:callObject>
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="instance" />
+						</plx:passParam>
+					</plx:callInstance>
+					<plx:local name="PatientAndDrugNameOldValueTuple" dataTypeName="Tuple">
+						<plx:passTypeParam dataTypeName="Patient" />
+						<plx:passTypeParam dataTypeName=".string" />
+					</plx:local>
+					<plx:branch>
+						<plx:condition>
+							<plx:binaryOperator type="identityInequality">
+								<plx:left>
+									<plx:cast type="exceptionCast" dataTypeName=".object">
+										<plx:nameRef type="parameter" name="oldValue" />
+									</plx:cast>
+								</plx:left>
+								<plx:right>
+									<plx:nullKeyword />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:condition>
+						<plx:callInstance name="Remove">
+							<plx:callObject>
+								<plx:cast type="exceptionCast" dataTypeName="ICollection">
+									<plx:passTypeParam dataTypeName="DrugAllergy" />
+									<plx:callInstance type="property" name="DrugAllergyViaPatientCollection">
+										<plx:callObject>
+											<plx:nameRef type="parameter" name="oldValue" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:cast>
+							</plx:callObject>
+							<plx:passParam>
+								<plx:nameRef type="parameter" name="instance" />
+							</plx:passParam>
+						</plx:callInstance>
+						<plx:assign>
+							<plx:left>
+								<plx:nameRef name="PatientAndDrugNameOldValueTuple" />
+							</plx:left>
+							<plx:right>
+								<plx:callStatic dataTypeName="Tuple" name="CreateTuple">
+									<plx:passMemberTypeParam dataTypeName="Patient" />
+									<plx:passMemberTypeParam dataTypeName=".string" />
+									<plx:passParam>
+										<plx:nameRef type="parameter" name="oldValue" />
+									</plx:passParam>
+									<plx:passParam>
+										<plx:callInstance type="property" name="DrugName">
+											<plx:callObject>
+												<plx:nameRef type="parameter" name="instance" />
+											</plx:callObject>
+										</plx:callInstance>
+									</plx:passParam>
+								</plx:callStatic>
+							</plx:right>
+						</plx:assign>
+					</plx:branch>
+					<plx:fallbackBranch>
+						<plx:assign>
+							<plx:left>
+								<plx:nameRef name="PatientAndDrugNameOldValueTuple" />
+							</plx:left>
+							<plx:right>
+								<plx:nullKeyword />
+							</plx:right>
+						</plx:assign>
+					</plx:fallbackBranch>
+					<plx:callThis name="OnPatientAndDrugNameChanged">
+						<plx:passParam>
+							<plx:nameRef type="parameter" name="instance" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:nameRef name="PatientAndDrugNameOldValueTuple" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:callStatic dataTypeName="Tuple" name="CreateTuple">
+								<plx:passMemberTypeParam dataTypeName="Patient" />
+								<plx:passMemberTypeParam dataTypeName=".string" />
+								<plx:passParam>
+									<plx:callInstance type="property" name="Patient">
+										<plx:callObject>
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+								<plx:passParam>
+									<plx:callInstance type="property" name="DrugName">
+										<plx:callObject>
+											<plx:nameRef type="parameter" name="instance" />
+										</plx:callObject>
+									</plx:callInstance>
+								</plx:passParam>
+							</plx:callStatic>
+						</plx:passParam>
+					</plx:callThis>
+				</plx:function>
+				<plx:field visibility="private" readOnly="true" name="_DrugAllergyList" dataTypeName="List">
+					<plx:passTypeParam dataTypeName="DrugAllergy" />
+				</plx:field>
+				<plx:field visibility="private" readOnly="true" name="_DrugAllergyReadOnlyCollection" dataTypeName="ReadOnlyCollection">
+					<plx:passTypeParam dataTypeName="DrugAllergy" />
+				</plx:field>
+				<plx:property visibility="public" name="DrugAllergyCollection">
+					<plx:interfaceMember memberName="DrugAllergyCollection" dataTypeName="IORMModel1Context" />
+					<plx:returns dataTypeName="IEnumerable">
+						<plx:passTypeParam dataTypeName="DrugAllergy" />
+					</plx:returns>
+					<plx:get>
+						<plx:return>
+							<plx:callThis type="field" name="_DrugAllergyReadOnlyCollection" />
+						</plx:return>
+					</plx:get>
+				</plx:property>
+				<plx:class visibility="private" modifier="sealed" name="DrugAllergyImpl">
+					<plx:leadingInfo>
+						<plx:pragma type="region" data="DrugAllergyImpl" />
+					</plx:leadingInfo>
+					<plx:trailingInfo>
+						<plx:pragma type="closeRegion" data="DrugAllergyImpl" />
+					</plx:trailingInfo>
+					<plx:attribute dataTypeName="StructLayoutAttribute" dataTypeQualifier="System.Runtime.InteropServices">
+						<plx:passParam>
+							<plx:callStatic type="field" name="Auto" dataTypeName="LayoutKind" dataTypeQualifier="System.Runtime.InteropServices" />
+						</plx:passParam>
+						<plx:passParam>
+							<plx:binaryOperator type="assignNamed">
+								<plx:left>
+									<plx:nameRef type="namedParameter" name="CharSet" />
+								</plx:left>
+								<plx:right>
+									<plx:callStatic type="field" name="Auto" dataTypeName="CharSet" dataTypeQualifier="System.Runtime.InteropServices" />
+								</plx:right>
+							</plx:binaryOperator>
+						</plx:passParam>
+					</plx:attribute>
+					<plx:derivesFromClass dataTypeName="DrugAllergy" />
+					<plx:function visibility="public" name=".construct">
+						<plx:param name="context" dataTypeName="ORMModel1Context" />
+						<plx:param name="drugName" dataTypeName=".string" />
+						<plx:param name="patient" dataTypeName="Patient" />
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_Context" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="context" />
+							</plx:right>
+						</plx:assign>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_DrugName" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="drugName" />
+							</plx:right>
+						</plx:assign>
+						<plx:callInstance name="OnDrugAllergyDrugNameChanged">
+							<plx:callObject>
+								<plx:nameRef type="parameter" name="context" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nullKeyword />
+							</plx:passParam>
+						</plx:callInstance>
+						<plx:assign>
+							<plx:left>
+								<plx:callThis type="field" name="_Patient" />
+							</plx:left>
+							<plx:right>
+								<plx:nameRef type="parameter" name="patient" />
+							</plx:right>
+						</plx:assign>
+						<plx:callInstance name="OnDrugAllergyPatientChanged">
+							<plx:callObject>
+								<plx:nameRef type="parameter" name="context" />
+							</plx:callObject>
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+							<plx:passParam>
+								<plx:nullKeyword />
+							</plx:passParam>
+						</plx:callInstance>
+						<plx:callInstance name="Add">
+							<plx:callObject>
+								<plx:callInstance type="field" name="_DrugAllergyList">
+									<plx:callObject>
+										<plx:nameRef type="parameter" name="context" />
+									</plx:callObject>
+								</plx:callInstance>
+							</plx:callObject>
+							<plx:passParam>
+								<plx:thisKeyword />
+							</plx:passParam>
+						</plx:callInstance>
+					</plx:function>
+					<plx:field visibility="private" readOnly="true" name="_Context" dataTypeName="ORMModel1Context" />
+					<plx:property visibility="public" modifier="sealedOverride" name="Context">
+						<plx:returns dataTypeName="ORMModel1Context" />
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_Context" />
+							</plx:return>
+						</plx:get>
+					</plx:property>
+					<plx:field visibility="private" readOnly="false" name="_DrugName" dataTypeName=".string" />
+					<plx:property visibility="public" modifier="sealedOverride" name="DrugName">
+						<plx:returns dataTypeName=".string" />
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_DrugName" />
+							</plx:return>
+						</plx:get>
+						<plx:set>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="identityEquality">
+										<plx:left>
+											<plx:cast type="exceptionCast" dataTypeName=".object">
+												<plx:valueKeyword />
+											</plx:cast>
+										</plx:left>
+										<plx:right>
+											<plx:nullKeyword />
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:throw>
+									<plx:callNew dataTypeName="ArgumentNullException">
+										<plx:passParam>
+											<plx:valueKeyword stringize="true" />
+										</plx:passParam>
+									</plx:callNew>
+								</plx:throw>
+							</plx:branch>
+							<plx:local name="oldValue" dataTypeName=".string">
+								<plx:initialize>
+									<plx:callThis type="field" name="_DrugName" />
+								</plx:initialize>
+							</plx:local>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="booleanAnd">
+										<plx:left>
+											<plx:binaryOperator type="identityInequality">
+												<plx:left>
+													<plx:cast type="exceptionCast" dataTypeName=".object">
+														<plx:nameRef name="oldValue" />
+													</plx:cast>
+												</plx:left>
+												<plx:right>
+													<plx:cast type="exceptionCast" dataTypeName=".object">
+														<plx:valueKeyword />
+													</plx:cast>
+												</plx:right>
+											</plx:binaryOperator>
+										</plx:left>
+										<plx:right>
+											<plx:unaryOperator type="booleanNot">
+												<plx:callInstance name="Equals">
+													<plx:callObject>
+														<plx:valueKeyword />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:nameRef name="oldValue" />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:unaryOperator>
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:branch>
+									<plx:condition>
+										<plx:binaryOperator type="booleanAnd">
+											<plx:left>
+												<plx:callInstance name="OnDrugAllergyDrugNameChanging">
+													<plx:callObject>
+														<plx:callThis type="field" name="_Context" />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:thisKeyword />
+													</plx:passParam>
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:left>
+											<plx:right>
+												<plx:callThis accessor="base" name="OnDrugNameChanging">
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callThis>
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:condition>
+									<plx:assign>
+										<plx:left>
+											<plx:callThis type="field" name="_DrugName" />
+										</plx:left>
+										<plx:right>
+											<plx:valueKeyword />
+										</plx:right>
+									</plx:assign>
+									<plx:callInstance name="OnDrugAllergyDrugNameChanged">
+										<plx:callObject>
+											<plx:callThis type="field" name="_Context" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:thisKeyword />
+										</plx:passParam>
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callInstance>
+									<plx:callThis accessor="base" name="OnDrugNameChanged">
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callThis>
+								</plx:branch>
+							</plx:branch>
+						</plx:set>
+					</plx:property>
+					<plx:field visibility="private" readOnly="false" name="_Patient" dataTypeName="Patient" />
+					<plx:property visibility="public" modifier="sealedOverride" name="Patient">
+						<plx:returns dataTypeName="Patient" />
+						<plx:get>
+							<plx:return>
+								<plx:callThis type="field" name="_Patient" />
+							</plx:return>
+						</plx:get>
+						<plx:set>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="identityEquality">
+										<plx:left>
+											<plx:cast type="exceptionCast" dataTypeName=".object">
+												<plx:valueKeyword />
+											</plx:cast>
+										</plx:left>
+										<plx:right>
+											<plx:nullKeyword />
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:throw>
+									<plx:callNew dataTypeName="ArgumentNullException">
+										<plx:passParam>
+											<plx:valueKeyword stringize="true" />
+										</plx:passParam>
+									</plx:callNew>
+								</plx:throw>
+							</plx:branch>
+							<plx:local name="oldValue" dataTypeName="Patient">
+								<plx:initialize>
+									<plx:callThis type="field" name="_Patient" />
+								</plx:initialize>
+							</plx:local>
+							<plx:branch>
+								<plx:condition>
+									<plx:binaryOperator type="identityInequality">
+										<plx:left>
+											<plx:cast type="exceptionCast" dataTypeName=".object">
+												<plx:nameRef name="oldValue" />
+											</plx:cast>
+										</plx:left>
+										<plx:right>
+											<plx:cast type="exceptionCast" dataTypeName=".object">
+												<plx:valueKeyword />
+											</plx:cast>
+										</plx:right>
+									</plx:binaryOperator>
+								</plx:condition>
+								<plx:branch>
+									<plx:condition>
+										<plx:binaryOperator type="booleanAnd">
+											<plx:left>
+												<plx:callInstance name="OnDrugAllergyPatientChanging">
+													<plx:callObject>
+														<plx:callThis type="field" name="_Context" />
+													</plx:callObject>
+													<plx:passParam>
+														<plx:thisKeyword />
+													</plx:passParam>
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callInstance>
+											</plx:left>
+											<plx:right>
+												<plx:callThis accessor="base" name="OnPatientChanging">
+													<plx:passParam>
+														<plx:valueKeyword />
+													</plx:passParam>
+												</plx:callThis>
+											</plx:right>
+										</plx:binaryOperator>
+									</plx:condition>
+									<plx:assign>
+										<plx:left>
+											<plx:callThis type="field" name="_Patient" />
+										</plx:left>
+										<plx:right>
+											<plx:valueKeyword />
+										</plx:right>
+									</plx:assign>
+									<plx:callInstance name="OnDrugAllergyPatientChanged">
+										<plx:callObject>
+											<plx:callThis type="field" name="_Context" />
+										</plx:callObject>
+										<plx:passParam>
+											<plx:thisKeyword />
+										</plx:passParam>
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callInstance>
+									<plx:callThis accessor="base" name="OnPatientChanged">
+										<plx:passParam>
+											<plx:nameRef name="oldValue" />
+										</plx:passParam>
+									</plx:callThis>
+								</plx:branch>
+							</plx:branch>
+						</plx:set>
+					</plx:property>
+				</plx:class>
+				<plx:pragma type="closeRegion" data="DrugAllergy" />
+			</plx:class>
+		</plx:namespace>
+	</plx:namespace>
+</plx:root>

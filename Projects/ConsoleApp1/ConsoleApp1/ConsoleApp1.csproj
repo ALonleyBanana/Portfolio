@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDF2CCB6-4557-49E0-B244-688CE8780DA6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Lab1App</RootNamespace>
+    <AssemblyName>Lab1App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lab1.Abstract.PLiX.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.Abstract.PLiX.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Lab1.Implementation.PLiX.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.Implementation.PLiX.xml</DependentUpon>
+    </Compile>
+    <Compile Include="Lab1._ORMCustomToolReport.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.orm</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Lab1.orm">
+      <Generator>ORMCustomTool</Generator>
+      <LastGenOutput>Lab1._ORMCustomToolReport.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lab1.sln" />
+  </ItemGroup>
+  <ItemGroup Condition="Exists('Lab1.orm')">
+    <None Include="Lab1.Abstract.PLiX.xml">
+      <AutoGen>True</AutoGen>
+      <Generator>NUPlixLoader</Generator>
+      <DependentUpon>Lab1.orm</DependentUpon>
+      <ORMGenerator>CLIPropertiesToPLiXAbstract</ORMGenerator>
+    </None>
+    <None Include="Lab1.CLIProperties.xml">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.orm</DependentUpon>
+      <ORMGenerator>OIALtoCLIProperties</ORMGenerator>
+    </None>
+    <None Include="Lab1.DCIL.xml">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.orm</DependentUpon>
+      <ORMGenerator>ConceptualDBtoDCL</ORMGenerator>
+    </None>
+    <None Include="Lab1.DDIL.xml">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.orm</DependentUpon>
+      <ORMGenerator>DCILtoDDIL</ORMGenerator>
+    </None>
+    <None Include="Lab1.Implementation.PLiX.xml">
+      <AutoGen>True</AutoGen>
+      <Generator>NUPlixLoader</Generator>
+      <DependentUpon>Lab1.orm</DependentUpon>
+      <ORMGenerator>CLIPropertiesToPLiXInMemory</ORMGenerator>
+    </None>
+    <None Include="Lab1.SQLServer.sql">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lab1.orm</DependentUpon>
+      <ORMGenerator>DDILtoSQLServer</ORMGenerator>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

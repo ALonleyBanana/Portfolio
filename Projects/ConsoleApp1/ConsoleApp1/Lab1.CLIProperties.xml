@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prop:AllProperties modelName="ORMModel1" xmlns:prop="urn:schemas-orm-net:PLiX:CLI:Properties" xmlns:plx="http://schemas.neumont.edu/CodeGeneration/PLiX">
+	<prop:Properties conceptTypeName="Patient" conceptTypeParamName="patient" conceptTypeId="_3D1E3D35-B287-4E90-BFF7-FE6C7FE79631">
+		<prop:Property name="PatientNr" paramName="patientNr" childId="_DC7E8A04-5366-4281-B30D-E72550058326" isUnique="true" canBeNull="false" isCollection="false" isCustomType="false" mandatory="alethic">
+			<prop:DataType dataTypeName=".i4" />
+		</prop:Property>
+		<prop:Property name="PatientName" paramName="patientName" childId="_ED03EADB-76E0-46CA-8724-CBF3103D3E94" isUnique="false" canBeNull="true" isCollection="false" isCustomType="false" mandatory="alethic">
+			<prop:DataType dataTypeName=".string" />
+		</prop:Property>
+		<prop:Property name="IsSmoker" paramName="isSmoker" childId="_C0F108B6-792C-46C1-8AAC-65FC8D45CCC0" mandatory="false" isUnique="false" canBeNull="true" isCollection="false" isCustomType="false">
+			<prop:DataType dataTypeName="Nullable">
+				<plx:passTypeParam dataTypeName=".boolean" />
+			</prop:DataType>
+		</prop:Property>
+		<prop:Property name="DrugAllergyViaPatientCollection" paramName="drugAllergyViaPatientCollection" reverseChildId="_419D998B-D8F8-493A-8679-9E8CFC22CE0F" mandatory="false" isUnique="true" isCollection="true" isCustomType="true" canBeNull="true" oppositeName="Patient" oppositeParamName="patient">
+			<prop:DataType dataTypeName="IEnumerable">
+				<plx:passTypeParam dataTypeName="DrugAllergy" />
+			</prop:DataType>
+		</prop:Property>
+	</prop:Properties>
+	<prop:Properties conceptTypeName="DrugAllergy" conceptTypeParamName="drugAllergy" conceptTypeId="_953DA405-0180-46B5-AF98-599A22BAFF18">
+		<prop:Property name="DrugName" paramName="drugName" childId="_B8F09DBC-79B8-4638-B72B-70B98FDFC326" isUnique="false" canBeNull="true" isCollection="false" isCustomType="false" mandatory="alethic">
+			<prop:DataType dataTypeName=".string" />
+		</prop:Property>
+		<prop:Property name="Patient" paramName="patient" childId="_419D998B-D8F8-493A-8679-9E8CFC22CE0F" isUnique="false" isCollection="false" isCustomType="true" canBeNull="true" oppositeName="DrugAllergy" oppositeParamName="drugAllergy" mandatory="alethic">
+			<prop:DataType dataTypeName="Patient" />
+		</prop:Property>
+	</prop:Properties>
+</prop:AllProperties>
